@@ -4,13 +4,14 @@ const port = 3000;
 
 app.set('view engine','ejs');
 
-app.get("/",(rec,res)=>{
-    var nome = "Marlon";
-    var tel = "99999999"
-    res.render("index"),{
+app.get("/:nome/:tel",(req,res)=>{
+
+    var nome = req.params.nome;
+    var tel = req.params.tel;
+    res.render("index",{
         nome:nome,
         tel:tel
-    };
+    });
 });
 
 app.get("/sobre",(rec,res)=>{
