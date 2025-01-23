@@ -5,7 +5,12 @@ const port = 3000;
 app.set('view engine','ejs');
 
 app.get("/",(rec,res)=>{
-    res.render("index");
+    var nome = "Marlon";
+    var tel = "99999999"
+    res.render("index"),{
+        nome:nome,
+        tel:tel
+    };
 });
 
 app.get("/sobre",(rec,res)=>{
